@@ -1,0 +1,9 @@
+Building CalCoin
+
+See doc/readme-qt.rst for instructions on building calcoin-qt,
+the intended-for-end-users, nice-graphical-interface, reference
+implementation of CalCoin.
+
+See doc/build-*.txt for instructions on building calcoin,
+the intended-for-services, no-graphical-interface, reference
+implementation of CalCoin.
