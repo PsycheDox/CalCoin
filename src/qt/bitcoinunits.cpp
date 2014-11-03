@@ -1,3 +1,7 @@
+// Copyright (c) 2011-2013 The Bitcoin developers
+// Distributed under the MIT/X11 software license, see the accompanying
+// file COPYING or http://www.opensource.org/licenses/mit-license.php.
+
 #include "bitcoinunits.h"
 
 #include <QStringList>
@@ -45,13 +49,13 @@ QString BitcoinUnits::description(int unit)
 {
     switch(unit)
     {
-    case BTC: return QString("calcoin");
-    case mBTC: return QString("millicalcoin (1 / 1,000)");
-    case uBTC: return QString("microcalcoin (1 / 1,000,000)");
+    case BTC: return QString("CalCoins");
+    case mBTC: return QString("Milli-CalCoins (1 / 1,000)");
+    case uBTC: return QString("Micro-CalCoins (1 / 1,000,000)");
     default: return QString("???");
     }
 }
-//a single unit (.00000001) of calcoin is called a "wander."
+
 qint64 BitcoinUnits::factor(int unit)
 {
     switch(unit)
@@ -99,7 +103,7 @@ QString BitcoinUnits::format(int unit, qint64 n, bool fPlus)
     QString quotient_str = QString::number(quotient);
     QString remainder_str = QString::number(remainder).rightJustified(num_decimals, '0');
 
-    // Right-trim excess 0's after the decimal point
+    // Right-trim excess zeros after the decimal point
     int nTrim = 0;
     for (int i = remainder_str.size()-1; i>=2 && (remainder_str.at(i) == '0'); --i)
         ++nTrim;
